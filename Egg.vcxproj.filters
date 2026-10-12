@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Egg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test2\stbimage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\OpenGL\includes\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="text_rendering.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IBL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTargets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\1.1.depth_testing.fs" />
+    <None Include="shaders\1.1.depth_testing.vs" />
+    <None Include="shaders\bloomFinal.fs" />
+    <None Include="shaders\bloomFinal.vs" />
+    <None Include="shaders\brdf.fs" />
+    <None Include="shaders\brdf.vs" />
+    <None Include="shaders\depthMap.fs" />
+    <None Include="shaders\depthMap.vs" />
+    <None Include="shaders\DualSphere.fs" />
+    <None Include="shaders\DualSphere.gs" />
+    <None Include="shaders\DualSphere.vs" />
+    <None Include="shaders\DualSphereNormals.fs" />
+    <None Include="shaders\DualSphereNormals.gs" />
+    <None Include="shaders\DualSphereNormals.vs" />
+    <None Include="shaders\floorShader.fs" />
+    <None Include="shaders\floorShader.vs" />
+    <None Include="shaders\gaussianBlur.fs" />
+    <None Include="shaders\gaussianBlur.vs" />
+    <None Include="shaders\generate_cubemap.vs" />
+    <None Include="shaders\hdr_to_cubemap.fs" />
+    <None Include="shaders\irradiance_convolution.fs" />
+    <None Include="shaders\NormalPP.fs" />
+    <None Include="shaders\NormalPP.vs" />
+    <None Include="shaders\PBR.fs" />
+    <None Include="shaders\PBR.vs" />
+    <None Include="shaders\PBR_sample_cubemap.fs" />
+    <None Include="shaders\PBR_sample_cubemap.vs" />
+    <None Include="shaders\prefilter.fs" />
+    <None Include="shaders\skybox.fs" />
+    <None Include="shaders\skybox.vs" />
+    <None Include="shaders\Sobel.fs" />
+    <None Include="shaders\Sobel.vs" />
+    <None Include="shaders\sun.fs" />
+    <None Include="shaders\sun.vs" />
+    <None Include="shaders\text.fs" />
+    <None Include="shaders\text.vs" />
+    <None Include="freetype.dll" />
+    <None Include="assimp-vc143-mtd.dll" />
+    <None Include="sun\UnstableStar.fbx" />
+    <None Include="resources\HDR_white_local_star_and_nebulae.hdr" />
+    <None Include="resources\newport_loft.hdr" />
+    <None Include="metal\Metal046B_2K-JPG.blend" />
+    <None Include="metal\Metal046B_2K-JPG.mtlx" />
+    <None Include="metal\Metal046B_2K-JPG.tres" />
+    <None Include="metal\Metal046B_2K-JPG.usdc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GL_debug_helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text_rendering.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTargets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEnums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sun\suncyl1.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skybox\nx.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skybox\ny.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skybox\nz.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skybox\px.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skybox\py.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skybox\pz.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\metal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\whitesquare.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B_2K-JPG_Color.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B_2K-JPG_Displacement.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B_2K-JPG_Metalness.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B_2K-JPG_NormalDX.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B_2K-JPG_NormalGL.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metal\Metal046B_2K-JPG_Roughness.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\fonts\arial.ttf" />
+    <Font Include="resources\fonts\arialbd.ttf" />
+    <Font Include="resources\fonts\arialbi.ttf" />
+    <Font Include="resources\fonts\ariali.ttf" />
+    <Font Include="resources\fonts\ariblk.ttf" />
+  </ItemGroup>
+</Project>
