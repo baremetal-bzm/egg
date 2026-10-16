@@ -19,10 +19,6 @@ void main()
 {
 
     TexCoords = aTexCoords;
-//    float floatValue = float(aIndex);
-//    floatValue = floatValue / 143.0;
-
-//    VColor = mix(vec3(0.0, 1.0, 0.0), vec3(1.0, 0.0, 0.0), float(aIndex)/(52*52)); 
         gl_Position = projection * view * model * vec4(aPos, 1.0); 
 
             

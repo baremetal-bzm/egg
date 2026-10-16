@@ -2,8 +2,6 @@
 layout (location = 0) out vec4 FragColor;
 layout (location = 1) out vec4 BrightnessColor;
 
-//in vec2 TexCoords;
-//in vec3 VColor;
 in ioblock {
     vec3 FragPos; //worldspace
     vec2 TexCoords;
@@ -52,9 +50,6 @@ vec2 ParallaxOcclusionMapping(vec2 texCoords, vec3 viewDir)
         // get depth of next layer
         currentLayerDepth += layerDepth;  
     }
-    
-    // get texture coordinates before collision (reverse operations)
-//    vec2 prevTexCoords = currentTexCoords + deltaTexCoords;
 
     // get depth after and before collision for linear interpolation
     float afterDepth  = currentDepthMapValue - currentLayerDepth;
@@ -101,7 +96,6 @@ void main()
     float diff = max(dot(lightDir, normal), 0.0);
     vec3 diffuse = diff * color;
     // specular
-    //vec3 viewDir = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
     vec3 reflectDir = reflect(-lightDir, normal);
     vec3 halfwayDir = normalize(lightDir + viewDir);  
     float spec = pow(max(dot(normal, halfwayDir), 0.0), 32.0);
@@ -115,17 +109,4 @@ void main()
     else
         BrightnessColor = vec4(0.0, 0.0, 0.0, 1.0);
     FragColor = vec4(composite, 1.0);
-
-//	FragColor = texture(diffuseTexture, TexCoords);
-//FragColor = vec4(VColor, 1.0);
-//	FragColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);
-
-
-//
-//        float tolerance = 0.001;
-//        if (fs_in.SplitHalf < 1-tolerance && fs_in.SplitHalf > -1+tolerance){
-//        FragColor = vec4(0.0);        
-////        discard; 
-        //}
-
 }

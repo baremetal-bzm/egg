@@ -82,15 +82,6 @@ void main()
     float NdotL = max(dot(N, L), 0.0);                
     Lo += (kD * albedo / PI + specular) * radiance * NdotL; 
 
-//    //ambient terms
-//    kS = fresnelSchlick(max(dot(N, V), 0.0), F0);
-//    kD = 1.0 - kS;
-//    kD *= 1.0 - metallic;	  
-//    vec3 irradiance = texture(irradianceMap, N).rgb;
-//    vec3 diffuse      = irradiance * albedo;
-//    vec3 ambient = (kD*diffuse)*ao;
-//    //vec3 ambient = vec3(0.03) * albedo * ao;
-
     //IBL ambient terms
     kS = fresnelSchlickRoughness(max(dot(N, V), 0.0), F0, roughness);
     kD = 1.0 - kS;
@@ -160,10 +151,7 @@ vec3 fresnelSchlickRoughness(float cosTheta, vec3 F0, float roughness)
     return F0 + (max(vec3(1.0 - roughness), F0) - F0) * pow(clamp(1.0 - cosTheta, 0.0, 1.0), 5.0);
 }  
 // ----------------------------------------------------------------------------
-// Easy trick to get tangent-normals to world-space to keep PBR code simplified.
-// Don't worry if you don't get what's going on; you generally want to do normal 
-// mapping the usual way for performance anyways; I do plan make a note of this 
-// technique somewhere later in the normal mapping tutorial.
+// Easy trick to get tangent-normals to world-space to keep PBR code simplified
 vec3 getNormalFromMap()
 {
     vec3 tangentNormal = texture(normalMap, TexCoords).xyz * 2.0 - 1.0;

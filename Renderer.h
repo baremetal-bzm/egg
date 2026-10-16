@@ -2,7 +2,7 @@
 #include <learnopengl/shader.h>
 #include <learnopengl/camera.h>
 #include <glm/glm/glm.hpp>
-#include <dualnum.h>
+#include "dualnum.h"
 
 #include "Primitives.h"
 #include "RenderTargets.h"

@@ -8,9 +8,6 @@ layout (location = 5) in int aIndex; //debug index
 layout (location = 6) in int aSplitHalf; //check for which half opens
 layout (location = 7) in float aDeformed; //check for which half opens
 
-
-//out vec2 TexCoords;
-
 out ioblock {
     vec3 FragPos;
     vec2 TexCoords;
@@ -28,7 +25,6 @@ uniform mat4 projection;
 uniform vec3 lightPos;
 uniform vec3 viewPos;
 
-//out vec3 VColor;
 void main()
 {
     vs_out.Deformed = aDeformed;
@@ -52,11 +48,4 @@ void main()
     vs_out.TBNinv=TBNinv;
         
     gl_Position = projection * view * model * vec4(aPos, 1.0);
-    //TexCoords = aTexCoords;
-////    float floatValue = float(aIndex);
-////    floatValue = floatValue / 143.0;
-
-////    VColor = mix(vec3(0.0, 1.0, 0.0), vec3(1.0, 0.0, 0.0), float(aIndex)/(52*52)); 
-        //gl_Position = projection * view * model * vec4(aPos, 1.0); 
-
 }  

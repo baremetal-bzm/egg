@@ -5,8 +5,6 @@ in vec2 TexCoords;
 
 uniform sampler2D screenTexture;
 
-//const float width = 800;
-//const float height = 600;
 uniform float scrWidth;
 uniform float scrHeight;
 

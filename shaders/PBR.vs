@@ -34,9 +34,6 @@ void main()
     N = normalize(vec3(model * vec4(aNorm, 0.0)));
     T = normalize(T - dot(T, N) * N); //gram schmidt for renormalizing when tangents are smudged
     B = -cross(N, T);
-//    T = normalize(T - dot(T, N) * N); //gram schmidt for renormalizing when tangents are smudged
-//    B = cross(N, T);
-//    mat3 TBN = mat3(T, B, N);
 
     gl_Position =  projection * view * vec4(WorldPos, 1.0);
 }

@@ -8,8 +8,6 @@ out vec2 gTexCoords;
 
 const float MAGNITUDE = 0.2;
   
-//uniform mat4 projection;
-
 void GenerateLine(int index)
 {
     gl_Position = gl_in[index].gl_Position;

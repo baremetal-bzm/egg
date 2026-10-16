@@ -1,19 +1,17 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stb_image.h>
-
 #include <glm/glm/glm.hpp>
 #include <glm/glm/gtc/matrix_transform.hpp>
 #include <glm/glm/gtc/type_ptr.hpp>
 #include <glm/glm/gtx/quaternion.hpp>
 #include <glm/glm/gtc/quaternion.hpp>
-
 #include <learnopengl/shader.h>
 #include <learnopengl/camera.h>
 #include <learnopengl/model.h>
-
 #include <iostream>
-#include <dualnum.h>
+
+#include "dualnum.h"
 #include "text_rendering.h"
 #include "IBL.h"
 #include "Textures.h"
@@ -58,7 +56,7 @@ glm::mat4 sphereView = camera.GetViewMatrix();
 glm::mat4 sphereProjection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 //arcball stuff
-//glm::quat last_arcball_rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
+//glm::quat last_arcball_rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f); //identity
 glm::quat last_arcball_rotation = glm::angleAxis(glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); //set an intial position
 glm::quat current_arcball_rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
 float pxstart, pystart, pxcurrent, pycurrent;
@@ -72,9 +70,7 @@ float endTimer = 0.0f;
 bool dimensionsChanged = false; //scuffed toggle to update renderer dimensions inside render loop 
 
 // lighting info
-// -------------
 glm::vec3 lightPos(1.0f, 3.0f, 2.0f);
-
 
 int main()
 {
@@ -106,7 +102,6 @@ int main()
     glfwSetMouseButtonCallback(window, mouse_button_callback);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
-
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -125,7 +120,6 @@ int main()
     glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
     //msaa
     //glEnable(GL_MULTISAMPLE);
-
 
     // build and compile shaders
     //these are needed to construct the ibl maps so they exist outside the renderer class
@@ -173,9 +167,9 @@ int main()
     unsigned int sphereTexture = loadTexture("metal/Metal046B_2K-JPG_Color.jpg");//diffuse texture
     unsigned int normalTexture = loadTexture("metal/Metal046B_2K-JPG_NormalGL.jpg"); //sphere normal map
     unsigned int depthTexture = loadTexture("metal/Metal046B_2K-JPG_Displacement.jpg"); //sphere depth map
-    unsigned int floorTexture = loadTexture("resources/whitesquare.jpg");
     unsigned int roughnessMap = loadTexture("metal/Metal046B_2K-JPG_Roughness.jpg"); 
     unsigned int metalnessMap = loadTexture("metal/Metal046B_2K-JPG_Metalness.jpg"); 
+    unsigned int floorTexture = loadTexture("resources/whitesquare.jpg");
     unsigned int sunTex = loadTexture("sun/suncyl1.jpg", "sun");
     vector<std::string> faces =
     {
@@ -191,7 +185,6 @@ int main()
     SceneTextures sceneTextures{ sphereTexture, normalTexture, depthTexture, cubeTexture, floorTexture, cubemapTexture, roughnessMap, metalnessMap };
     Renderer renderer(prims, renderTargets, ibl, dSphere, sceneTextures,
         SCR_WIDTH, SCR_HEIGHT, SHADOW_WIDTH, SHADOW_HEIGHT);
-
 
     // render loop; note: game logic largely lives in the callbacks because... it was simple i guess
     // -----------

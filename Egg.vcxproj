@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Documents\OpenGL\includes\glad.c" />
     <ClCompile Include="..\test2\stbimage.cpp" />
+    <ClCompile Include="dualnum.cpp" />
     <ClCompile Include="Egg.cpp" />
     <ClCompile Include="IBL.cpp" />
     <ClCompile Include="Primitives.cpp" />
@@ -191,6 +192,7 @@
     <None Include="sun\UnstableStar.fbx" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dualnum.h" />
     <ClInclude Include="GameEnums.h" />
     <ClInclude Include="GL_debug_helper.h" />
     <ClInclude Include="IBL.h" />
