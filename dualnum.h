@@ -71,7 +71,7 @@ namespace dualnum
 	template<typename T>
 	inline
 		dual<T> atan2(const dual<T>& v1, const dual<T>& v2) {
-		return dual(std::atan2(v1.real, v2.real), (v1.derivative * v2.real - v1.real * v2.derivative) / (v2.real * v2.real + v1.real * v1.real));
+		return dual<T>(std::atan2(v1.real, v2.real), (v1.derivative * v2.real - v1.real * v2.derivative) / (v2.real * v2.real + v1.real * v1.real));
 	}
 
 	//template<typename T>
